@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/4e48c37e28.js" crossorigin="anonymous"></script>
+
 </head>
 <body>
     <h1>Todos</h1>
@@ -13,7 +15,7 @@
     <% todos.forEach( el => { %>
             <li class='todoItem' data-id='<%=el._id%>'>
                 <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.todo %></span>
-                <span class='del'> Delete </span>
+                <button class='del'> <i class="fa-regular fa-trash-can"></i></button>
             </li>
     <% }) %>    
     </ul>
@@ -21,8 +23,8 @@
     <h2><%= user.userName %> has <%= left %> things left to do.</h2>
 
     <form action="/todos/createTodo" method='POST'>
-        <input type="text" placeholder="Enter Todo Item" name='todoItem'>
-        <input type="submit">
+        <button type="submit"><i class="fa-solid fa-circle-plus"></i></button> <input type="text" placeholder="Enter Todo Item" name='todoItem'>
+        
     </form>
 
     <a href="/logout">Logout</a>
