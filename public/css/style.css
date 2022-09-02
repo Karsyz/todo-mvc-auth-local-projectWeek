@@ -1,10 +1,63 @@
-h1{
-    color: black;
+
+
+
+
+
+
+
+
+
+
+
+body {
+  display: flex;
+  flex-direction: column;
+  padding: 0 2rem;
+  font-family: "Noto Sans", sans-serif !;
+  min-height: 95vh;
 }
-.completed{
-    text-decoration: line-through;
-    color: gray;
+
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-.not{
-    text-decoration: underline;
+
+.logOutButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 5rem;
+  height: 2rem;
+  background: #3f53d9;
+  color: white;
+  text-decoration: none;
+}
+
+.mainSection {
+  min-height: 30vh;
+  min-width: 60vw;
+}
+
+.todoItem {
+  height: 1.5rem;
+  width: fit-content;
+}
+
+.todoItem:hover,
+.del:hover,
+.fa-circle-plus:hover {
+  cursor: pointer;
+}
+
+.itemsLeft {
+  color: #3f53d9;
+}
+.completed {
+  text-decoration: line-through;
+  color: gray;
+}
+.not {
+  text-decoration: underline;
 }
