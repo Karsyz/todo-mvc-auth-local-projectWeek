@@ -53,6 +53,7 @@ form {
   justify-items: center;
 
   column-gap: 2rem;
+  row-gap: 2rem;
 }
 
 .input {
@@ -80,7 +81,7 @@ form {
   background: #fff;
 }
 
-.login {
+.submit-form {
   margin: 2rem;
   grid-column: span 2;
 }
