@@ -35,7 +35,7 @@ html {
   font-size: 2.8rem;
 }
 
-form {
+form.signupLogin {
   margin: 4rem 0;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -79,6 +79,7 @@ form {
   text-decoration: none;
   text-align: center;
   align-self: flex-end;
+}
  
 /* Todo and Logout Button */
   
@@ -137,3 +138,59 @@ nav {
 .not {
   text-decoration: underline;
 }
+
+/* Styling for add button form section */
+
+.none {
+  display: none;
+}
+
+.hidden {
+  display: hidden;
+}
+
+.plusButtonCont {
+  border: 2px solid black;
+  border-radius: 50%;
+  width: 3.2rem;
+  height: 3.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.plusButtonCont:hover {
+  /* background: rgba(3, 3, 235,0.2); */
+  box-shadow: 0 0 2px 2px grey;
+}
+
+.plusButtonCont:active {
+  transform: translateX(0.3rem);
+}
+
+.plusButton {
+  font-size: 2rem;
+}
+
+.addForm {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.formTextBox {
+  visibility: hidden;
+  width: 1vw;
+  font-size: 2rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease-in;
+}
+
+.textBoxGrow{
+  visibility: visible;
+  width: 50vw;
+}
+

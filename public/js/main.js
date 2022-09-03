@@ -1,6 +1,7 @@
 const deleteBtn = document.querySelectorAll('.del')
 const todoItem = document.querySelectorAll('span.not')
 const todoComplete = document.querySelectorAll('span.completed')
+const addbutton = document.querySelector('.plusButtonCont')
 
 Array.from(deleteBtn).forEach((el)=>{
     el.addEventListener("mousedown", mouseDown);
@@ -14,19 +15,24 @@ Array.from(todoItem).forEach((el)=>{
 Array.from(todoComplete).forEach((el)=>{
     el.addEventListener('click', markIncomplete)
 })
+
+// delete button press and hold
 var mouseTimer;
+
 function mouseDown() {
         mouseUp();
         console.log("mouse down")
-        mouseTimer = setTimeout(execMouseDown,3000); //set timeout to fire in 3 seconds when the user presses mouse button down
+        mouseTimer = setTimeout(execMouseDown,1000); //set timeout to fire in 1 seconds when the user presses mouse button down
     }
-   
-  
-    function mouseUp() { 
+
+function mouseUp() { 
         if (mouseTimer) clearTimeout(mouseTimer);  //cancel timer when mouse button is released
         console.log("mouse up")
     }  
- async function deleteTodo(){
+
+
+
+async function deleteTodo(){
            
             const todoId = this.parentNode.dataset.id
             try{
@@ -95,3 +101,11 @@ async function markIncomplete(){
         console.log(err)
     }
 }
+
+
+// add button form text box animation
+addbutton.addEventListener('click', () => {
+    document.querySelector('#addTextBox').classList.toggle('textBoxGrow')
+}) 
+
+

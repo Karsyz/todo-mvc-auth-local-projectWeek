@@ -12,15 +12,17 @@
 
     <!-- google font-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400&display=swap" rel="stylesheet"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400&display=swap" rel="stylesheet"> 
 
 </head>
 <body>
+    
     <nav>
         <h1><%= user.userName %>'s Todo Page</h1>
         <a href="/logout" class="logOutButton">Logout</a>
     </nav>
+    
     <main class="mainSection">
         <h2><%= user.userName %> has <span class="itemsLeft"><%= left %> </span>things left to do.</h2>
     
@@ -36,16 +38,16 @@
     </ul>
     </main>
 
-    
+    <section class="addForm">
 
-    <form action="/todos/createTodo" method='POST'>
-
-        <button type="submit"><i class="fa-solid fa-circle-plus"></i></button> 
-        <input type="text" placeholder="Enter Todo Item" name='todoItem'>
-
-    </form>
-
-    
+        <div class="plusButtonCont"><i class="plusButton fas fa-plus"></i></div>
+        
+        <form action="/todos/createTodo" method='POST'>
+            <input id="addTextBox" class="formTextBox" type="text" placeholder="Enter Todo Item" name='todoItem'>
+            <button class="none" type="submit"><i class="fa-solid fa-circle-plus"></i></button> 
+        </form>
+        
+    </section>
 
     <script src="js/main.js"></script>
 </body>
