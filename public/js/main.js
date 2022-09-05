@@ -2,6 +2,7 @@ const deleteBtn = document.querySelectorAll('.del')
 const todoItem = document.querySelectorAll('span.not')
 const todoComplete = document.querySelectorAll('span.completed')
 const addbutton = document.querySelector('.plusButtonCont')
+const darkMode = document.getElementById('darkMode')
 
 Array.from(deleteBtn).forEach((el)=>{
     el.addEventListener("mousedown", mouseDown);
@@ -102,10 +103,59 @@ async function markIncomplete(){
     }
 }
 
+//dark mode
+
+
+localStorage.getItem('isDarkMode')
+
+if(localStorage.getItem('isDarkMode') != 'false') {
+        localStorage.setItem('isDarkMode', 'false')
+    }
+
+window.addEventListener('load', () => {
+    if (!localStorage.isDarkMode) {
+        console.log(localStorage.isDarkMode)
+        enableDarkMode()
+    } else {
+        disableDarkMode()
+    }
+})
+
+document.querySelector('#darkMode').addEventListener('click', () => {
+    enableDarkMode()
+})
+
+function enableDarkMode() {
+        document.querySelector('body').style.backgroundColor = '#121212'
+        document.querySelector('h1').style.color = 'white'
+        document.querySelector('h2').style.color = 'white'
+        document.querySelector('#darkMode').value = 'Light Mode'
+        localStorage.setItem('isDarkMode', "true")
+        console.log(localStorage.isDarkMode)
+        if (document.querySelector('#darkMode').value === 'Light Mode') {
+            document.querySelector('#darkMode').addEventListener('click', () => {
+                disableDarkMode()
+            })
+        }
+}
+
+function disableDarkMode() {
+        document.querySelector('body').style.backgroundColor = 'white'
+        document.querySelector('h1').style.color = 'black'
+        document.querySelector('h2').style.color = 'black'
+        document.querySelector('#darkMode').value = 'Dark Mode'
+        localStorage.setItem('isDarkMode', "false")
+        if (document.querySelector('#darkMode').value === 'Dark Mode') {
+            document.querySelector('#darkMode').addEventListener('click', () => {
+                enableDarkMode()
+            })
+        }
+}
 
 // add button form text box animation
 addbutton.addEventListener('click', () => {
     document.querySelector('#addTextBox').classList.toggle('textBoxGrow')
 }) 
+
 
 
