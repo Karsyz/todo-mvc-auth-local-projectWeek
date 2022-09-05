@@ -15,12 +15,9 @@ html {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-
   display: flex;
   flex-direction: column;
-
   width: 55%;
-
   padding: 3rem;
   border: 3px solid #aaa;
   border-radius: 12px;
@@ -47,20 +44,16 @@ form.signupLogin {
 
 .input {
   padding: 1.5rem;
-
   border-radius: 7px;
   border: 2px solid #ddd;
 }
 
 .btn {
   font-size: 1.6rem;
-
   color: #fff;
   background: #121bbb;
   border: 2px solid #121bbb;
-
   width: 25%;
-
   transition: all 0.2s;
 }
 
@@ -174,6 +167,9 @@ nav {
 }
 
 .addForm {
+  position: static;
+  bottom: 10px;
+  left: 10px;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -191,7 +187,13 @@ nav {
 
 .textBoxGrow{
   visibility: visible;
-  width: 50vw;
+  display: block;
+  width: 150%;
 }
 
 
+#darkMode {
+  position: fixed;
+  right: 15px;
+  bottom: 10px;
+}

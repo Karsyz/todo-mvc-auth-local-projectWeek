@@ -155,6 +155,7 @@ function disableDarkMode() {
 // add button form text box animation
 addbutton.addEventListener('click', () => {
     document.querySelector('#addTextBox').classList.toggle('textBoxGrow')
+    console.log('clicked')
 }) 
 
 
