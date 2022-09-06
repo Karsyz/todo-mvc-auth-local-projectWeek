@@ -24,9 +24,12 @@
     </nav>
     
     <main class="app">
-        <h2><%= user.userName %> has <span class="itemsLeft"><%= left %> </span>things left to do.</h2>
-    
-        <ul>
+        <div>
+            
+            <h2><%= user.userName %> has <span class="itemsLeft"><%= left %> </span>things left to do.</h2>
+        </div>
+            
+        <ul class="todo--items">
         <% todos.forEach( el => { %>
                 <li class='todoItem' data-id='<%=el._id%>'>
                 
@@ -36,7 +39,7 @@
                 </li>
         <% }) %>    
         </ul>
-
+        
         <section class="addForm">
             <div class="plusButtonCont"><i class="plusButton fas fa-plus"></i></div>
             <form action="/todos/createTodo" method='POST'>
