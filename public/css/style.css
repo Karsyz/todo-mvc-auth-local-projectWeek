@@ -132,7 +132,7 @@ nav {
   flex-direction: column;
   gap: 3rem;
 
-  padding: 2rem 0;
+  padding: 2rem 0 2rem 1.1rem ;
 
   font-size: 2.4rem;
 }
@@ -169,12 +169,13 @@ nav {
 .itemsLeft {
   color: #3f53d9;
 }
+
 .completed {
   text-decoration: line-through;
   color: gray;
 }
 .not {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 /* Styling for add button form section */
@@ -187,11 +188,42 @@ nav {
   display: hidden;
 }
 
+.addForm {
+  position: static;
+  bottom: 10px;
+  left: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  height: 3.2rem;
+}
+
+.formTextBox {
+  visibility: hidden;
+  width: 1vw;
+  font-size: 2rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease-in;
+}
+
+.textBoxGrow {
+  visibility: visible;
+  display: block;
+  width: 100%;
+  flex-grow: 2;
+}
+
+section.addForm > form {
+  width: 100%;
+}
+
 .plusButtonCont {
   border: 2px solid black;
   border-radius: 50%;
-  width: 3.2rem;
-  height: 3.2rem;
+  height: 40px;
+  width: 44px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -211,30 +243,10 @@ nav {
   font-size: 2rem;
 }
 
-.addForm {
-  position: static;
-  bottom: 10px;
-  left: 10px;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
+.plusbotton > form {
+  width: 100%;
 }
 
-.formTextBox {
-  visibility: hidden;
-  width: 1vw;
-  font-size: 2rem;
-  padding: 0.5rem;
-  border-radius: 0.5rem;
-  transition: all 0.2s ease-in;
-}
-
-.textBoxGrow {
-  visibility: visible;
-  display: block;
-  width: 150%;
-}
 
 #darkMode {
   position: fixed;
@@ -262,4 +274,8 @@ nav {
   .app {
     width: 80%;
   }
+}
+
+button {
+  background: transparent;
 }

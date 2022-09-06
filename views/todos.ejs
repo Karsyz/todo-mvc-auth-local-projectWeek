@@ -32,9 +32,9 @@
         <ul class="todo--items">
         <% todos.forEach( el => { %>
                 <li class='todoItem' data-id='<%=el._id%>'>
-                
-                    <span class=' todoItem <%= el.completed === true ? 'completed' : 'not'%>'><input type="checkbox"><%= el.todo %></   span>
-
+                    <span class='todoItem <%= el.completed === true ? 'completed' : 'not'%>'>
+                        <input type="checkbox" <%= el.completed === true ? 'checked' : ''%>><%= el.todo %>
+                    </span>
                     <button class='del'> <i class="fa-regular fa-trash-can"></i></button>
                 </li>
         <% }) %>    

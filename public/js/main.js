@@ -105,16 +105,12 @@ async function markIncomplete(){
 
 //dark mode
 
-
-localStorage.getItem('isDarkMode')
-
-if(localStorage.getItem('isDarkMode') != 'false') {
+if(!localStorage.getItem('isDarkMode')) {
         localStorage.setItem('isDarkMode', 'false')
     }
 
 window.addEventListener('load', () => {
-    if (!localStorage.isDarkMode) {
-        console.log(localStorage.isDarkMode)
+    if (localStorage.isDarkMode === 'true') {
         enableDarkMode()
     } else {
         disableDarkMode()
@@ -126,12 +122,15 @@ document.querySelector('#darkMode').addEventListener('click', () => {
 })
 
 function enableDarkMode() {
-        document.querySelector('body').style.backgroundColor = '#121212'
-        document.querySelector('h1').style.color = 'white'
-        document.querySelector('h2').style.color = 'white'
-        document.querySelector('#darkMode').value = 'Light Mode'
-        localStorage.setItem('isDarkMode', "true")
-        console.log(localStorage.isDarkMode)
+    document.querySelector('body').style.backgroundColor = '#121212'
+    document.querySelector('body').style.color = 'white'
+    document.querySelector('.plusButtonCont').style.border = '2px solid white'
+    Array.from(deleteBtn).forEach( (el) => { el.style.color = 'white' } )
+    document.querySelector('body').style.color = 'white'
+    document.querySelector('h1').style.color = 'white'
+    document.querySelector('h2').style.color = 'white'
+    document.querySelector('#darkMode').value = 'Light Mode'
+     localStorage.setItem('isDarkMode', "true")
         if (document.querySelector('#darkMode').value === 'Light Mode') {
             document.querySelector('#darkMode').addEventListener('click', () => {
                 disableDarkMode()
@@ -141,6 +140,9 @@ function enableDarkMode() {
 
 function disableDarkMode() {
         document.querySelector('body').style.backgroundColor = 'white'
+        document.querySelector('body').style.color = 'black'
+        document.querySelector('.plusButtonCont').style.border = '2px solid black'
+        Array.from(deleteBtn).forEach( (el) => { el.style.color = 'black' } )
         document.querySelector('h1').style.color = 'black'
         document.querySelector('h2').style.color = 'black'
         document.querySelector('#darkMode').value = 'Dark Mode'
