@@ -10,6 +10,10 @@ html {
   font-size: 62.5%;
 }
 
+body {
+  font-family: 'Noto Sans', sans-serif;
+}
+
 .app {
   position: absolute;
   top: 50%;
@@ -53,7 +57,7 @@ form.signupLogin {
   color: #fff;
   background: #121bbb;
   border: 2px solid #121bbb;
-  width: 25%;
+  width: 12rem;
   transition: all 0.2s;
 }
 
@@ -73,36 +77,49 @@ form.signupLogin {
   text-align: center;
   align-self: flex-end;
 }
- 
+
 /* Todo and Logout Button */
-  
+
 body {
   display: flex;
   flex-direction: column;
   padding: 0 2rem;
-  font-family: "Noto Sans", sans-serif !;
   min-height: 95vh;
-}
-
-h1 {
-  color: black;
 }
 
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-size: 3.2rem;
+  margin-top: 2rem;
 }
 
 .logOutButton {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 5rem;
-  height: 2rem;
+  /* width: 5rem;
+  height: 2rem; */
   background: #3f53d9;
   color: white;
   text-decoration: none;
+
+  border-radius: 12px;
+  padding: 0.5rem 1rem;
+  font-size: 1.6rem;
+}
+
+.todo--items {
+  list-style: none;
+
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+
+  padding: 2rem 0;
+
+  font-size: 2.4rem;
 }
 
 .mainSection {
@@ -111,8 +128,21 @@ nav {
 }
 
 .todoItem {
-  height: 1.5rem;
+  /* height: 1.5rem; */
   width: fit-content;
+
+  display: flex;
+  gap: 2rem;
+}
+
+.del {
+  padding: 0.5rem;
+  border: none;
+  font-size: 2.6rem;
+}
+
+.del:hover {
+  cursor: pointer;
 }
 
 .todoItem:hover,
@@ -185,15 +215,30 @@ nav {
   transition: all 0.2s ease-in;
 }
 
-.textBoxGrow{
+.textBoxGrow {
   visibility: visible;
   display: block;
   width: 150%;
 }
 
-
 #darkMode {
   position: fixed;
   right: 15px;
   bottom: 10px;
+}
+
+/* Media queries */
+
+@media (max-width: 1000px) {
+  form.signupLogin {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 700px) {
+  .app {
+    width: 80%;
+  }
 }
