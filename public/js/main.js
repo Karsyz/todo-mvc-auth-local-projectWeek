@@ -162,3 +162,22 @@ addbutton.addEventListener('click', () => {
 
 
 
+// Capitalize Name
+
+async function getUserName(){
+    const userName = this.parentNode.dataset.id
+    try{
+        const response = await fetch('todos/markIncomplete', {
+            method: 'put',
+            headers: {'Content-type': 'application/json'},
+            body: JSON.stringify({
+                'todoIdFromJSFile': todoId
+            })
+        })
+        const data = await response.json()
+        console.log(data)
+        location.reload()
+    }catch(err){
+        console.log(err)
+    }
+}

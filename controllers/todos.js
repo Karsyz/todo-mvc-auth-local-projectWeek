@@ -1,4 +1,5 @@
 const Todo = require('../models/Todo')
+const Newnames = require('../extras/capitalizeName')
 
 module.exports = {
     getTodos: async (req,res)=>{
